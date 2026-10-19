@@ -90,12 +90,36 @@ h6 {
 }
 
 /* all 3 */
+a {
+    transition: opacity 0.8s ease;
+}
+
+a:hover{
+    opacity: 0.5;
+    text-decoration: none;
+}
+
 body {
     margin: 0;
     padding: 0;
 }
 
 /* all 4 */
+img {
+    display: block;
+    margin: auto;
+}
+
+img:hover {
+    transform: scale(1.2);
+}
+
+h2,
+.products-list figcaption {
+    z-index: 2;
+    position: relative;
+}
+
 main {
     padding: 20px;
 }
@@ -171,7 +195,7 @@ main {
 .product img {
     max-width: 100%;
     height: auto;
-    transition: transform 0,4s ease;
+    transition: transform 0.4s ease;
     position: relative;
 }
 
@@ -217,7 +241,7 @@ select {
 
 /* all-3: transição da opacidade dos linrk */
 a {
-    transition: opacity 0,8s ease;
+    transition: opacity 0.8s ease;
 }
 
 a:hover {
@@ -235,15 +259,34 @@ a:hover {
     transform: scale(1.5);
     z-index: 2;
 }
-
+.page-category-accessories h1 {
+    animation: mover-titulo 3s linear infinite;
+}
 /* ct-tv 6: rotação dos títulos dos produtos */
 @keyframes rotacionar-titulos {
     from {
-        transform: rotateX(0deg); rotateY(0deh) rotateZ(0deg);
+        transform: rotateX(0deg) rotateY(0deh) rotateZ(0deg);
     }
 
 to {
     transform: rotateX(10deg) rotateY(10deg) rotateZ(2deg);
+    }
+}
+.page-category-acessorios h1 {
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(20deg);
+    } 
+
+    50% { 
+        transform: rotateY(20deg);
+    }
+    
+    100% {
+        transform: rotateZ(10deg);
     }
 }
 
@@ -260,12 +303,12 @@ to {
 
 /* Animação dos nomes dos produtos */
 .products-list h3 {
-    animation: rotacionar-titulo 2s ease-in-out infinite alternate;
+    animation: rotacionar-titulos 2s ease-in-out infinite alternate;
 }
 
 /* Animação do título principal */
 .page-category-tvs h1 {
-    animation: mover-titulo 3s ease-in-out infinite alternate;
+    animation: mover-titulos 3s ease-in-out infinite alternate;
 }
 
 /* Menu de navegação */
