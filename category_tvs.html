@@ -27,150 +27,133 @@
 </header>
 <main>
 <h1>categoria de produtos</h1>
-    <table class="products-table">
-            <caption> Lista de TVs disponíveis com preços e parcelamento</caption>
+    <ul class="products-list">
+        <li class="product">
+            <h3>Samsung</h3>
 
-            <thead>
-                <tr> 
-                    <th scope="col">Marca</th> 
-                    <th scope="col">Imagem</th>
-                    <th scope="col">Preço</th>
-                    <th scope="col">Parcelamento</th>
-                    <th scope="col">Detalhes</th>
-                </tr>
-            </thead>
+            <figure>
+                <img
+                    src="imagem sem fundo/Samsung.png"
+                    alt="TV Samsung 55"
+                    width="200"
+                >
+            </figure>
 
-            <tbody>
-                <tr>
-                    <th scope="row">Samsung</th>
-                    <td>
-                        <img
-                        src="imagem sem fundo/Samsung.png"
-                        alt="TV Samsung Smart"
-                        width="200"
-                    >
-                </td>
-                <td>R$2.000,00</td>
-                <td>10x de R$200,00</td>
-                <td>
-                    <a href="https://shop.samsung.com/br/samsung-vision-ai-tv-65-neo-qled-8k-qn900f-2025/p"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                        ver mais
-                </a>
-                </td>
-            </tr>
+            <p>
+                TV Samsung Smart
+            </p>
+            <p class="price">
+                <strong>Preço</strong>
+                <data value="2500">R$ 2.500,00</data>
+            </p>
 
-            <tr>
-                <th scope="row">LG</th>
-                <td>
-                    <img src="imagem sem fundo/LG.png"
-                        alt="TV LG Smart"
-                        width="200">
-                </td>
-                <td>R$3.800,00</td>
-                <td>10x de R$380,00</td>
-                <td>
-                    <a href="https://www.lg.com/br/tvs-e-soundbars/qned/65qned73asa/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Ver mais
-                    </a>
-                </td>
-            </tr>
+            <p class="installment">
+                <strong>Parcelamento</strong>
+                <data value="200">R$200,00</data> en 10x
+            </p>
 
-                <tr>
-                    <th scope="row">Sony</th>
-                    <td>
-                        <img src="imagem sem fundo/sony.png" 
-                        alt="TV Sony Smart"
-                        width="200">
-                    </td>
-                    <td> R$ 5.000,00</td>
-                    <td>10x de R$520,00</td>
-                    <td>
-                        <a href="https://www.sony.com.br/electronics/televisores/xbr-x900f-series"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                            Ver mais
-                        </a>
-                    </td>
-                </tr>
+        <a 
+            href="https://www.samsung.com/br/tvs/qled-tv/qn900f-75-inch-neo-qled-8k-mini-led-smart-tv-qn75qn900fgxzd/" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            Ver mais
+        </a>
+            
+        </li>
 
-                <tr>
-                    <th scope="row">RCL</th>
-                    <td>
-                        <img src="imagem sem fundo/TCL.png"
-                        alt="TV TCL Smart"
-                        width="200">
-                </td>
-                <td> R$2.000,00</td>
-                <TD>R$200,00 em 10x</TD>
-                <td>
-                    <a href="https://www.lojatcl.com.br/smart-tv-tcl-65-polegadas-sqd-mini-led-4k-q7d-pro-wifi-bluetooth-google-tv-hdr10--144-hz-65q7dpro/p?idsku=33490&gad_source=1&gad_campaignid=23956549174&gbraid=0AAAABDWaEP9T1Qw-fqtNDH_6kbNRUibXR&gclid=EAIaIQobChMI8-yTt-m_lwMVsFNIAB1TQR_DEAAYASAAEgLmu_D_BwE" 
-                    target="_blank" 
-                    rel="noopener noopener">
-                        Ver mais
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-        </table>
+        <li class="product">
+            <h3>LG</h3>
+
+            <figure>
+                <img
+                    src="imagem sem fundo/LG.png"
+                    alt="TV LG 65"
+                    width="200"
+                >
+            </figure>
+
+            <p>
+                TV LG Smart
+            </p>
+            <p class="price">
+                <strong>Preço</strong>
+                <data value="3800">R$ 3.800,00</data>
+            </p>
+
+            <p class="installment">
+                <strong>Parcelamento</strong>
+                <data value="380">R$380,00</data> em 10x
+            </p>
+
+            <a href="https://www.lg.com/br/tvs-e-soundbars/qned/55qned73asa/" target="_blank" rel="noopener noreferrer">Ver mais</a>
+        </li>
+
+    <li class="product">
+        <h3>Sony</h3>
+
+        <figure>
+            <img
+                src="imagem sem fundo/sony.png"
+                alt="TV Sony 75"
+                width="200"
+            >
+        </figure>
+
+        <p>TV Sony Smart</p>
+
+        <p class="price">
+            <strong>Preço</strong>
+            <data value="5200">R$ 5.200,00</data>
+        </p>
+
+        <p class="installment">
+            <strong>Parcelamento</strong>
+            <data value="520">R$520,00</data> em 10x
+        </p>
+
+        <a href="https://www.sony.com.br/electronics/televisores/xbr-x900f-series" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        Ver mais
+    </a>
+    </li>
+
+    <li class="product">
+        <h3>TCL</h3>
+
+        <figure>
+            <img
+                src="imagem sem fundo/TCL.png"
+                alt="TV TCL 65"
+                width="200"
+            >
+        </figure>
+
+        <p>TV TCL Smart</p>
+
+        <p class="price">
+            <strong>Preço</strong>
+            <data value="6991,08">R$ 6.991,08</data>   
+    </p>
+    
+        <p class="installment">
+            <strong>Parcelamento</strong>
+            <data value="759,90">R$759,90</data> em 10x
+        </p>
+
+        <a 
+        href="https://www.lojatcl.com.br/smart-tv-tcl-65-polegadas-sqd-mini-led-4k-c7l-wifi-bluetooth-google-tv-hdr10--ultra-slim-65c7l-33477/p"
+        target="_blank"
+        rel="noopener noreferrer">
+        Ver mais
+            </a>
+        </li>
+    </ul>
 </main>
 
 <footer class="footer">
     <p>Venda de TVs e acessórios online</p>
 </footer>
-
-<form id="tv-request-form">
-    <fieldset>
-        <legend>Solicitação de modelo de TV</legend>
-    
-        <!--Nome-->
-        <label for="Nome">Nome:</label>
-        <input type="text" id="Nome" name="Nome" placeholder="Ex: Maria Silva" autocomplete="name" required />
-
-        <!-- Email -->
-         <label for="Email">E-mail:</label>
-         <input 
-         type="email" 
-         id="email" 
-         name="email" 
-         placeholder="Ex: maria@email.com" 
-         autocomplete="email" 
-         required
-        >
-        <!-- Modelo -->
-        <label for="modelo">Modelo de TV desejado:</label>
-        <input 
-        list="modelos-tv" 
-        id="modelo" 
-        name="modelo" 
-        placeholder="Escolha ou digite um modelo" 
-        required
-        >
-
-        <datalist id="modelos-tv">
-            <option volue="1">Samsung</option>
-            <option value="2">LG</option>
-            <option value="3">Sony</option>
-            <option value="4">TCL</option>
-        </datalist>
-
-        <!-- Botões -->
-        <button type="reset">Limpar formulário</button>
-        <button type="submit">Enviar solicitaçãp</button>
-    </fieldset>
-</form>
-
-<h2> Perguntas mais frequentes</h2>
-<details>
-    <summary>Como solicitar um modelo?</summary>
-    <p>
-        Para solicitar um modelo de televisão que não está disponíveis no 
-        site, preencha o formulário acima. 
-    </p>
-</details>
 
 </body>
 </html>
