@@ -31,12 +31,20 @@
         <li class="product">
             <h3>Samsung</h3>
 
-            <figure>
+            <tbody>
+                <tr>
+                <picture>
+                    <source
+                    srcset="./imagem sem fundo" 
+                    media="(max-width: 767px)"
+                    type="image/webp"
+                >
                 <img
                     src="imagem sem fundo/Samsung.png"
-                    alt="TV Samsung 55"
+                    alt="TV Samgung 55"
                     width="200"
                 >
+                </picture>
             </figure>
 
             <p>
@@ -154,6 +162,37 @@
 <footer class="footer">
     <p>Venda de TVs e acessórios online</p>
 </footer>
+
+<form id="tv-request-form">
+    <fieldset>
+        <legend> Solicitação de Modelo de TV</legend>
+
+        <!--Nome-->
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Ex: Maria Silva" autocomplete="nome" required />
+
+        <!--Email-->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Escolha ou digite um modelo" required />
+
+        <details id="mododelos-tv">
+            <option value="1">Samsung</option>
+            <option value="2">LG</option>
+        </details>
+
+        <!--Botôes-->
+        <button type="reset">Limpar formulário</button>
+        <button type="submit">Enviar solicitação</button>
+    </fieldset>
+</form>
+
+<h2>Perguntas mais frequentes</h2>
+<details>
+    <summary>Como solicitar um modelo?</summary>
+    <p>
+        Para solicitar um modelo de televisão que não está no site, preencha o formulário acima.
+    </p>
+</details>
 
 </body>
 </html>
