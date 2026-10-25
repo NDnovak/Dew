@@ -687,10 +687,16 @@ select {
    13. COMPUTADORES: ACESSÓRIOS EM 2 COLUNAS
 ======================================== */
 
+/* PC: TVs em duas colunas */
 @media (min-width: 1025px) {
+    body.page-category-tvs .products-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Acessórios em duas colunas */
     body.page-category-accessories .products-list,
     body.page-category-acessorios .products-list {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
