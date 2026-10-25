@@ -1,258 +1,238 @@
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
 
-/* 5 */
-p:first-letter {
-    text-transform: uppercase;
+* {
+    box-sizing: border-box;
 }
 
-/* 6 */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #172033;
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
 a:hover {
     text-decoration: underline;
 }
 
-/* 7 */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-   text-align: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+p:first-letter {
+    text-transform: uppercase;
+}
+
+.hide {
+    display: none;
+}
+
+/* Fundo das páginas */
+
+.page-products,
+.page-category-tvs,
+.page-category-accessories,
+.page-category-acessorios {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #172033;
+}
+
+/* Títulos das páginas de categorias */
+
+.page-category-tvs h1,
+.page-category-accessories h1,
+.page-category-acessorios h1 {
+    animation: mover-categorias 3s ease-in-out infinite alternate;
 }
 
 
-/* Banner principal */
-.banner {
-    min-height: 380px;
-    padding: 80px 8%;
-    box-sizing: border-box;
+/* ========================================
+   2. CABEÇALHO E MENU
+======================================== */
 
-    background: linear-gradient(135deg, #101827, #1d4ed8);
-    color: white;
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 20px 7%;
+    background: #101827;
+    color: #fff;
     text-align: center;
+}
 
+.header > p {
+    margin: 0;
+}
+
+.logo {
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header .nav {
+    width: 100%;
+}
+
+.header .nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header .nav li {
+    flex: 0 1 160px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.header .nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 44px;
+    padding: 10px;
+
+    border: 1px solid #78909c;
+    border-radius: 6px;
+    background: #607d8b;
+    color: #fff;
+
+    font-weight: bold;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.header .nav a:hover {
+    background: #78909c;
+    color: #fff;
+    opacity: 1;
+}
+
+
+/* ========================================
+   3. BANNER DA PÁGINA INICIAL
+======================================== */
+
+.banner {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 12px;
+
+    min-height: 380px;
+    padding: 80px 8%;
+
     border-radius: 14px;
-}
-
-
-/* pd 2 */
-.hide {
-    display: none;
-}
-
-/* all 1 */
-@media print {
-    .header,
-    .footer {
-        display: none;
-    }
-}
-
-/* all 3 */
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-/* all 4 */
-img {
-    display: block;
-    margin: auto;
-}
-
-h2,
-.products-list figcaption {
-    z-index: 2;
-    position: relative;
-}
-
-/* tablet: 2 TVs por linha */
-@media(max-width: 1024px) {
-    .products-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-        padding: 12px;
-    }
-}
-
-.product-1 { grid-area: product1; }
-.product-2 { grid-area: product2; }
-.product-3 { grid-area: product3; }
-.product-4 { grid-area: product4; }
-
-.product {
-    min-width: 0;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    padding: 10px;
+    background: linear-gradient(135deg, #101827, #1d4ed8);
+    color: #fff;
     text-align: center;
 }
 
-.product img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Layout padrão: celular - mobile first */
-.products-list {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-    list-style: none;
-    padding: 20px;
-    margin: 0;
-    justify-items: center;
-    align-items: stretch;
-}
-
-/* all-1: espaçamento interno */
-main {
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* all-2: bordas arredondadas nos campos */
-input,
-textarea,
-select {
-    border: 1px solid #999;
-    border-radius: 6px;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-/* ct-tv 6: rotação dos títulos dos produtos */
-@keyframes rotacionar-titulos {
-    from {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-    }
-
-to {
-    transform: rotateX(10deg) rotateY(10deg) rotateZ(2deg);
-    }
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotateX(20deg);
-    } 
-
-    50% { 
-        transform: rotateY(20deg);
-    }
-    
-    100% {
-        transform: rotateZ(10deg);
-    }
-}
-
-/* ct-tv 7: deslocamento horizontal do h1 */
-@keyframes mover-titulo {
-from{
-    translate: -10% 0;
-}
-
-to {
-    translate: 10% 0;
-    }
-}
-
-/* Animação dos nomes dos produtos */
-.products-list h3 {
-    animation: rotacionar-titulos 2s ease-in-out infinite alternate;
-}
-
-.page-products a {
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.page-products .header {
-    background: #101827;
-    color: white;
-    padding: 20px 7%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.logo {
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.nav ul {
-    display: flex;
-    list-style: none;
-    gap: 24px;
-    padding: 0;
-    margin: 0;
-}
-
-.nav a {
-    color: white;
-    font-weight: bold;
-}
-
-.nav a:hover {
-    color: #60a5fa;
-}
-
 .destaque {
+    margin: 0;
     color: #93c5fd;
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 2px;
-    margin: 0;
 }
 
+.titulo {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.15;
+    text-align: center;
+}
 
 .descricao {
     max-width: 520px;
     margin: 0;
+    color: #dbeafe;
     font-size: 16px;
     line-height: 1.7;
-    color: #dbeafe;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+/* Botões */
 
 .botao {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 24px;
+
     margin-top: 12px;
+    padding: 14px 24px;
 
     border-radius: 8px;
     background: #3b82f6;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
+    color: #fff;
 
+    font-weight: bold;
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .botao:hover {
-    background: #60a5fa;
     transform: translateY(-3px);
+    background: #1d4ed8;
+    color: #fff;
+    text-decoration: none;
 }
 
-/* Categorias e cartões */
+
+/* ========================================
+   4. CATEGORIAS E CARTÕES DA PÁGINA INICIAL
+======================================== */
+
 .categorias {
     padding: 55px 7%;
     text-align: center;
@@ -260,29 +240,30 @@ to {
 
 .categorias h2,
 .promocao h2 {
-    font-size: 30px;
     margin-bottom: 30px;
+    font-size: 30px;
 }
 
 .cards {
     display: grid;
-    grid-template-columns:
-        repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
+
     max-width: 1000px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .card {
-    background: white;
     padding: 22px;
     border-radius: 14px;
+    background: #fff;
     box-shadow: 0 5px 20px #17203312;
-    transition: transform 0.3s, box-shadow 0.3s;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-5px);
     box-shadow: 0 12px 28px #17203320;
 }
 
@@ -303,16 +284,20 @@ to {
 
 .card a {
     display: inline-block;
+    margin-top: 10px;
     color: #2563eb;
     font-weight: bold;
-    margin-top: 10px;
 }
 
 .card a:hover {
     color: #1d4ed8;
 }
 
-/* Ofertas */
+
+/* ========================================
+   5. OFERTAS
+======================================== */
+
 .promocao {
     margin: 0 7% 50px;
     padding: 40px 20px;
@@ -325,141 +310,159 @@ to {
     line-height: 1.6;
 }
 
-/* Celulares */
-@media (max-width: 600px) {
-    .banner {
-        min-height: 340px;
-        padding: 45px 18px;
-        gap: 10px;
-    }
 
-    .destaque {
-        font-size: 11px;
-        letter-spacing: 1.5px;
-    }
+/* ========================================
+   6. LISTA E CARTÕES DE PRODUTOS
+======================================== */
 
-    .titulo {
-        font-size: 36px;
-    }
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 
-    .descricao {
-        font-size: 14px;
-    }
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    list-style: none;
+    align-items: stretch;
 }
 
-.titulo {
-    font-size: clamp(34px, 5vw, 56px);
-    line-height: 1.15;
-    margin: 0;
-    color: white;
-    text-align: center;
-}
-
-
-/* Cabeçalho padronizado */
-.header {
-    background: #101827;
-    color: white;
-    padding: 20px 7%;
+.products-list > li.product {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    box-sizing: border-box;
+
+    width: 100%;
+    min-width: 0;
+    padding: 18px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+
+    text-align: center;
+    overflow-wrap: anywhere;
+    box-shadow: 0 4px 12px #17203310;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Logo ou título da loja */
-.logo {
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
+.products-list > li.product img {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    height: 180px;
+    margin: 0 auto 12px;
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.products-list figcaption {
+    position: relative;
+    z-index: 1;
+}
+
+.products-list h2,
+.products-list h3 {
+    overflow-wrap: anywhere;
+}
+
+.products-list a {
+    overflow-wrap: anywhere;
+}
+
+/* Efeito de hover apenas em dispositivos compatíveis */
+
+@media (hover: hover) and (pointer: fine) {
+    .products-list > li.product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px #17203320;
+    }
+
+    .products-list > li.product img:hover {
+        transform: scale(1.03);
+    }
+}
+
+
+/* ========================================
+   7. RODAPÉ
+======================================== */
+
+.footer {
+    padding: 24px;
+    background: #607d8b;
+    color: #fff;
     text-align: center;
 }
 
-/* Fundo e fonte das páginas */
-.page-products,
-.page-category-tvs,
-.page-category-accessories,
-.page-category-acessorios {
+.footer p {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f1f5f9;
-    color: #172033;
 }
 
-/* Títulos principais */
-.page-products h1,
-.page-category-tvs h1,
-.page-category-accessories h1,
-.page-category-acessorios h1 {
-    font-size: 30px;
-    text-transform: uppercase;
-    text-align: center;
-}
 
-/* ===== Formulário de solicitação de TV ===== */
+/* ========================================
+   8. FORMULÁRIO DE SOLICITAÇÃO DE TV
+======================================== */
 
 .tv-request-section {
+    width: 100%;
     max-width: 760px;
     margin: 40px auto;
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
     color: #172033;
-    box-sizing: border-box;
 }
 
 .tv-request-header {
-    text-align: center;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .tv-request-header .destaque {
+    margin-bottom: 10px;
     color: #2563eb;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
-    margin-bottom: 10px;
 }
 
 .tv-request-header h2 {
-    font-size: clamp(26px, 4vw, 36px);
     margin: 0 0 12px;
     color: #101827;
+    font-size: clamp(26px, 4vw, 36px);
 }
 
 .tv-request-header > p:last-child {
-    color: #64748b;
-    line-height: 1.7;
     max-width: 520px;
     margin: auto;
+    color: #64748b;
+    line-height: 1.7;
 }
 
-/* Cartão do formulário */
-
 #tv-request-form {
-    background: #fff;
     padding: 30px;
     border: 1px solid #e2e8f0;
     border-radius: 16px;
+    background: #fff;
     box-shadow: 0 8px 25px #1720330d;
 }
 
 #tv-request-form fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
     min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 #tv-request-form legend {
+    margin-bottom: 24px;
+    color: #101827;
     font-size: 21px;
     font-weight: bold;
-    color: #101827;
-    margin-bottom: 24px;
 }
-
-/* Campos */
 
 #tv-request-form .form-group {
     display: flex;
@@ -469,24 +472,30 @@ to {
 }
 
 #tv-request-form label {
+    color: #334155;
     font-size: 14px;
     font-weight: bold;
-    color: #334155;
+}
+
+#tv-request-form input,
+#tv-request-form select,
+#tv-request-form textarea,
+input,
+textarea,
+select {
+    max-width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #fff;
+    color: #172033;
+    font: inherit;
 }
 
 #tv-request-form input,
 #tv-request-form select,
 #tv-request-form textarea {
     width: 100%;
-    padding: 13px 14px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    background: #f8fafc;
-    color: #172033;
-    font: inherit;
-    font-size: 15px;
-    box-sizing: border-box;
-    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 #tv-request-form textarea {
@@ -499,15 +508,12 @@ to {
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 3px #2563eb20;
-    background: #fff;
 }
-
-/* Botões */
 
 #tv-request-form .form-buttons {
     display: flex;
-    justify-content: flex-end;
     flex-wrap: wrap;
+    justify-content: flex-end;
     gap: 12px;
     margin-top: 28px;
 }
@@ -519,7 +525,7 @@ to {
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 #tv-request-form button:hover {
@@ -544,26 +550,28 @@ to {
     background: #cbd5e1;
 }
 
-/* Perguntas frequentes */
+
+/* ========================================
+   9. PERGUNTAS FREQUENTES
+======================================== */
 
 .faq-section {
     margin-top: 45px;
 }
 
 .faq-section h2 {
-    text-align: center;
-    font-size: 26px;
-    color: #101827;
     margin-bottom: 22px;
+    color: #101827;
+    font-size: 26px;
+    text-align: center;
 }
 
 .faq-item {
-    background: #fff;
+    margin-bottom: 12px;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
-    margin-bottom: 12px;
+    background: #fff;
     overflow: hidden;
-    transition: border-color 0.2s;
 }
 
 .faq-item[open] {
@@ -572,8 +580,8 @@ to {
 
 .faq-item summary {
     padding: 18px 20px;
-    font-weight: bold;
     color: #172033;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -582,187 +590,91 @@ to {
 }
 
 .faq-item p {
-    padding: 0 20px 18px;
     margin: 0;
+    padding: 0 20px 18px;
     color: #64748b;
     line-height: 1.7;
 }
 
-/* Adaptação para celular */
 
-@media (max-width: 600px) {
-    .tv-request-section {
-        padding: 12px;
-        margin: 25px auto;
+/* ========================================
+   10. ANIMAÇÕES
+======================================== */
+
+@keyframes rotacionar-titulos {
+    from {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
 
-    #tv-request-form {
-        padding: 20px 16px;
-    }
-
-    #tv-request-form .form-buttons {
-        flex-direction: column-reverse;
-    }
-
-    #tv-request-form button {
-        width: 100%;
+    to {
+        transform: rotateX(5deg) rotateY(5deg) rotateZ(1deg);
     }
 }
 
-a {
-    transition: opacity 0.3s ease;
-}
-
-a:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-}
-
-
-/* Cabeçalho */
-.header {
-    background: #101827;
-    color: white;
-    padding: 20px 7%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    box-sizing: border-box;
-}
-
-/* Logo */
-.logo {
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Menu */
-.header .nav {
-    width: 100%;
-    position: relative;
-    z-index: 3;
-}
-
-.header .nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.header .nav li {
-    flex: 1 1 120px;
-    min-width: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box;
-}
-
-.header .nav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #607D8B;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-}
-
-.header .nav a:hover {
-    background-color: #78909C;
-    opacity: 1;
-    text-decoration: underline;
-}
-
-.footer {
-    padding: 24px;
-    background: #607D8B;
-    color: white;
-    text-align: center;
-}
-
-/* ===== TVs e acessórios ===== */
-
-.products-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-
-    list-style: none;
-    box-sizing: border-box;
-    align-items: stretch;
-}
-
-/* Cartão de cada produto */
-.products-list > li.product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    width: 100%;
-    min-width: 0;
-    padding: 18px;
-
-    box-sizing: border-box;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    background: #fff;
-    text-align: center;
-
-    overflow-wrap: anywhere;
-    box-shadow: 0 4px 12px #17203310;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Imagens dos produtos */
-.products-list > li.product img {
-    display: block;
-    width: 100%;
-    max-width: 260px;
-    height: 180px;
-
-    margin: 0 auto 12px;
-    object-fit: contain;
-}
-
-/* Efeito ao passar o mouse */
-@media (hover: hover) and (pointer: fine) {
-    .products-list > li.product:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px #17203320;
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg);
     }
 
-    .products-list > li.product img:hover {
-        transform: scale(1.03);
+    50% {
+        transform: rotateY(5deg);
+    }
+
+    100% {
+        transform: rotateZ(1deg);
     }
 }
 
-/* Tablet: duas colunas */
-@media (max-width: 1024px) {
+@keyframes mover-titulo {
+    from {
+        transform: translateX(-5px);
+    }
+
+    to {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes mover-categorias {
+    from {
+        transform: translateX(-8px);
+    }
+
+    to {
+        transform: translateX(8px);
+    }
+}
+
+/* Animação dos nomes dos produtos */
+
+.products-list h3 {
+    animation: rotacionar-titulos 2s ease-in-out infinite alternate;
+}
+
+/* Animação do título principal da categoria de TVs */
+
+.page-category-tvs h1 {
+    animation: mover-titulo 3s ease-in-out infinite alternate;
+}
+
+
+/* ========================================
+   11. IMPRESSÃO
+======================================== */
+
+@media print {
+    .header,
+    .footer {
+        display: none;
+    }
+}
+
+
+/* ========================================
+   12. TABLETS
+======================================== */
+
+@media (min-width: 601px) and (max-width: 1024px) {
     .products-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
@@ -770,8 +682,79 @@ a:hover {
     }
 }
 
-/* Celular: uma coluna */
+
+/* ========================================
+   13. COMPUTADORES: ACESSÓRIOS EM 2 COLUNAS
+======================================== */
+
+@media (min-width: 1025px) {
+    body.page-category-accessories .products-list,
+    body.page-category-acessorios .products-list {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+
+/* ========================================
+   14. CELULARES
+======================================== */
+
 @media (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 18px 12px;
+        gap: 16px;
+    }
+
+    .header .nav ul {
+        gap: 8px;
+    }
+
+    .header .nav li {
+        flex: 1 1 100px;
+    }
+
+    .banner {
+        min-height: 340px;
+        padding: 45px 18px;
+        gap: 10px;
+    }
+
+    .destaque {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .titulo {
+        font-size: clamp(30px, 8vw, 36px);
+    }
+
+    .descricao {
+        font-size: 14px;
+    }
+
+    .categorias {
+        padding: 35px 10px;
+    }
+
+    .categorias h2,
+    .promocao h2 {
+        font-size: 25px;
+    }
+
+    .cards {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .promocao {
+        margin: 0 5px 30px;
+        padding: 30px 16px;
+    }
+
     .products-list {
         grid-template-columns: minmax(0, 1fr);
         gap: 16px;
@@ -786,38 +769,25 @@ a:hover {
         max-width: 220px;
         height: 160px;
     }
-}
 
-
-/* Animação do título Categorias de Produtos */
-.page-category-tvs h1,
-.page-category-accessories h1,
-.page-category-acessorios h1 {
-    animation: mover-categorias 3s ease-in-out infinite alternate;
-}
-
-/* Movimento lateral suave */
-@keyframes mover-categorias {
-    from {
-        transform: translateX(-15px);
+    .tv-request-section {
+        margin: 25px auto;
+        padding: 12px;
     }
 
-    to {
-        transform: translateX(15px);
+    #tv-request-form {
+        padding: 20px 16px;
+    }
+
+    #tv-request-form .form-buttons {
+        flex-direction: column-reverse;
+    }
+
+    #tv-request-form button {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 20px 12px;
     }
 }
-
-/* PC: acessórios em duas colunas */
-@media (min-width: 1025px) {
-    body.page-category-accessories .products-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* Celular: acessórios em uma coluna */
-@media (max-width: 600px) {
-    body.page-category-accessories .products-list {
-        grid-template-columns: minmax(0, 1fr);
-    }
-}
-
